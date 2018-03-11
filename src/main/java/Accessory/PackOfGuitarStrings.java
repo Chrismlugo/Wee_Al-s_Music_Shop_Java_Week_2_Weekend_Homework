@@ -1,13 +1,16 @@
 package Accessory;
 
+import Abstract.Item;
+import Behaviours.ISell;
 import Instruments.GuitarString;
 
 import java.util.ArrayList;
 
-public class PackOfGuitarStrings {
+public class PackOfGuitarStrings extends Item implements ISell {
     private ArrayList<GuitarString> strings;
 
-    public PackOfGuitarStrings() {
+    public PackOfGuitarStrings(String make, int buyPrice, int sellPrice) {
+        super(make, buyPrice, sellPrice);
         this.strings = new ArrayList<>();
 
     }
@@ -19,4 +22,8 @@ public class PackOfGuitarStrings {
     }
 
 
+    @Override
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
+    }
 }

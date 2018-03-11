@@ -1,11 +1,13 @@
 package Instruments;
 
 import Abstract.Instrument;
+import Abstract.Item;
+import Behaviours.ISell;
 import Enum.InstrumentType;
 
 import java.util.ArrayList;
 
-public class Guitar extends Instrument {
+public class Guitar extends Instrument implements ISell {
     ArrayList<GuitarString> strings;
     public Guitar(String model, String material, InstrumentType instrumentType, String make, int buyPrice, int sellPrice) {
         super(model, material, instrumentType, make, buyPrice, sellPrice);
@@ -17,5 +19,10 @@ public class Guitar extends Instrument {
         ArrayList<GuitarString> copy = new ArrayList<>();
         copy = this.strings;
         return copy;
+    }
+
+    @Override
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
     }
 }
