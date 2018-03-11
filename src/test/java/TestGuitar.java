@@ -1,8 +1,12 @@
 import Enum.InstrumentType;
 import Instruments.Guitar;
+import Instruments.GuitarString;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class TestGuitar {
@@ -10,7 +14,7 @@ public class TestGuitar {
 
     @Before
     public void setUp() throws Exception {
-        guitar = new Guitar("Explorer", "Rich Mahogany", InstrumentType.STRING);
+        guitar = new Guitar("Explorer", "Rich Mahogany", InstrumentType.STRING, "Gibson", 1500, 3000);
     }
 
     @Test
@@ -21,5 +25,11 @@ public class TestGuitar {
     @Test
     public void hasInstrumentType() {
         assertEquals(InstrumentType.STRING, guitar.getInstrumentType());
+    }
+
+    @Test
+    public void canGetListOfStrings() {
+        ArrayList<GuitarString> copy = new ArrayList<>();
+        assertEquals(copy, guitar.getStrings());
     }
 }
