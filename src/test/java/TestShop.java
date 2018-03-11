@@ -5,6 +5,8 @@ import Instruments.Guitar;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class TestShop {
@@ -53,5 +55,19 @@ public class TestShop {
         shop.addStock(packOfGuitarStrings);
         shop.addStock(valveOil);
         assertEquals(770, shop.profit());
+    }
+
+    @Test
+    public void canGetGuitarsInStock() {
+
+        Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
+        shop.addStock(guitar);
+        shop.addStock(guitar);
+        shop.addStock(guitar);
+        shop.addStock(packOfGuitarStrings);
+        shop.addStock(valveOil);
+        assertEquals(3, shop.countGuitarStock());
     }
 }

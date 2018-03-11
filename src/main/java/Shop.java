@@ -37,4 +37,18 @@ public class Shop {
         }
         return total;
     }
+
+    public ArrayList<Guitar> getGuitars() {
+        ArrayList<Guitar> copy = new ArrayList<>();
+        for(ISell item: this.stock){
+            if(item instanceof Guitar){
+                copy.add((Guitar)item);
+            }
+        }
+        return copy;
+    }
+
+    public int countGuitarStock() {
+       return getGuitars().size();
+    }
 }
