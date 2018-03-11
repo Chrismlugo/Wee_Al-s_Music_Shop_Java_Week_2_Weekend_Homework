@@ -9,6 +9,8 @@ public enum InstrumentType {
     public final  String type;
 
     InstrumentType(String type) {
+
         this.type = type;
     }
+
 }

@@ -3,6 +3,7 @@ import Accessory.PackOfGuitarStrings;
 import Accessory.ValveOil;
 import Behaviours.ISell;
 import Enum.InstrumentType;
+import Enum.StringPackType;
 import Instruments.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +33,7 @@ public class TestShop {
     @Test
     public void canAddStockToShop() {
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         shop.addStock(guitar);
         shop.addStock(packOfGuitarStrings);
         assertEquals(2, shop.countStock());
@@ -41,7 +42,7 @@ public class TestShop {
     @Test
     public void canRemoveItemFromStock() {
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         shop.addStock(guitar);
         shop.addStock(packOfGuitarStrings);
         shop.removeStock(guitar);
@@ -55,7 +56,7 @@ public class TestShop {
         Valve valve3 = new Valve();
         Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(trumpet);
         shop.addStock(guitar);
@@ -68,7 +69,7 @@ public class TestShop {
     public void canGetGuitarsInStock() {
 
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(guitar);
@@ -85,7 +86,7 @@ public class TestShop {
         Valve valve3 = new Valve();
         Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(guitar);
@@ -105,7 +106,7 @@ public class TestShop {
         Valve valve3 = new Valve();
         Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(guitar);
@@ -128,7 +129,7 @@ public class TestShop {
         Saxophone saxophone = new Saxophone("alto sax", "brass", InstrumentType.BRASS,reed, "Yamaha" , 100, 750);
         Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(guitar);
@@ -154,7 +155,7 @@ public class TestShop {
         Saxophone saxophone = new Saxophone("alto sax", "brass", InstrumentType.BRASS,reed, "Yamaha" , 100, 750);
         Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(guitar);
@@ -177,7 +178,7 @@ public class TestShop {
   public void canFindItemByMake(){
         ArrayList<Item> copy = new ArrayList<>();
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
-        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
+        PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings(StringPackType.STANDARD,"d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
         shop.addStock(guitar);
         shop.addStock(packOfGuitarStrings);
