@@ -1,4 +1,4 @@
-package Accessory;
+package Instruments;
 
 public class Valve {
 }

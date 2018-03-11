@@ -1,24 +1,32 @@
 package Instruments;
 
 import Abstract.Instrument;
-import Accessory.Valve;
 import Behaviours.IPlay;
 import Enum.InstrumentType;
 
-import java.util.ArrayList;
-
 public class Trumpet extends Instrument implements IPlay {
-    ArrayList<Valve> valves;
-    public Trumpet(String model, String material, InstrumentType instrumentType, String make, int buyPrice, int sellPrice) {
-        super(model, material, instrumentType, make, buyPrice, sellPrice);
 
-        this.valves = new ArrayList<>();
+    private Valve valve1;
+    private Valve valve2;
+    private Valve valve3;
+    public Trumpet(String model, String material, InstrumentType instrumentType, String make, Valve valve1, Valve valve2, Valve valve3, int buyPrice, int sellPrice) {
+        super(model, material, instrumentType, make, buyPrice, sellPrice);
+        this.valve1 = valve1;
+        this.valve2 = valve2;
+        this.valve3 = valve3;
+
     }
 
-    public ArrayList<Valve> getValves() {
-        ArrayList<Valve> copy = new ArrayList<>();
-        copy = this.valves;
-        return copy;
+    public Valve getValve1() {
+        return valve1;
+    }
+
+    public Valve getValve2() {
+        return valve2;
+    }
+
+    public Valve getValve3() {
+        return valve3;
     }
 
     @Override

@@ -1,4 +1,8 @@
 package Instruments;
 
-public class GuitarString {
+import Abstract.Item;
+import Behaviours.ISell;
+
+public class GuitarString  {
+
 }

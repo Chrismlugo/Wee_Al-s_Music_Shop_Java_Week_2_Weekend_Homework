@@ -1,7 +1,6 @@
 package Instruments;
 
 import Abstract.Instrument;
-import Accessory.Reed;
 import Behaviours.IPlay;
 import Enum.InstrumentType;
 

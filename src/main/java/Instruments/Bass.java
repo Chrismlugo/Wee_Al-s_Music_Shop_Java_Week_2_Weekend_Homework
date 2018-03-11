@@ -11,6 +11,7 @@ public class Bass extends Instrument implements ISell, IPlay {
     ArrayList<GuitarString> strings;
     public Bass(String model, String material, InstrumentType instrumentType, String make, int buyPrice, int sellPrice) {
         super(model, material, instrumentType, make, buyPrice, sellPrice);
+        this.strings = new ArrayList<>();
     }
 
     public ArrayList<GuitarString> getStrings() {
@@ -29,5 +30,13 @@ public class Bass extends Instrument implements ISell, IPlay {
 
       return  sellPrice - buyPrice;
 
+    }
+
+    public void addGuitarString(GuitarString string){
+        strings.add(string);
+    }
+
+    public int countStrings() {
+        return strings.size();
     }
 }

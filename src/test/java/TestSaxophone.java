@@ -1,4 +1,4 @@
-import Accessory.Reed;
+import Instruments.Reed;
 import Enum.InstrumentType;
 import Instruments.Saxophone;
 import org.junit.Before;
@@ -20,5 +20,16 @@ public class TestSaxophone {
     @Test
     public void hasTypeOfReed() {
         assertEquals("single", saxophone.getReedType());
+    }
+
+    @Test
+    public void canGetReed() {
+        assertEquals(reed, saxophone.getReed());
+
+    }
+
+    @Test
+    public void canPlay() {
+        assertEquals("blasts baker street", saxophone.play());
     }
 }
