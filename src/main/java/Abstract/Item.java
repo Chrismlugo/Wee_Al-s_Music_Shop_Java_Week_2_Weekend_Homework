@@ -12,4 +12,16 @@ public abstract class Item {
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
     }
+
+    public String getMake() {
+        return make;
+    }
+
+    public int getBuyPrice() {
+        return buyPrice;
+    }
+
+    public int getSellPrice() {
+        return sellPrice;
+    }
 }

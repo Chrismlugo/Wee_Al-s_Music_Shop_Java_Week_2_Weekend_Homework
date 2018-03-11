@@ -2,9 +2,10 @@ package Instruments;
 
 import Abstract.Instrument;
 import Behaviours.IPlay;
+import Behaviours.ISell;
 import Enum.InstrumentType;
 
-public class Saxophone extends Instrument implements IPlay {
+public class Saxophone extends Instrument implements IPlay, ISell {
     private Reed reed;
 
     public Saxophone(String model, String material, InstrumentType instrumentType, Reed reed, String make, int buyPrice, int sellPrice) {
@@ -23,5 +24,10 @@ public class Saxophone extends Instrument implements IPlay {
     @Override
     public String play() {
         return "blasts baker street";
+    }
+
+    @Override
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
     }
 }

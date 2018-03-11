@@ -2,9 +2,10 @@ package Instruments;
 
 import Abstract.Instrument;
 import Behaviours.IPlay;
+import Behaviours.ISell;
 import Enum.InstrumentType;
 
-public class Trumpet extends Instrument implements IPlay {
+public class Trumpet extends Instrument implements IPlay, ISell {
 
     private Valve valve1;
     private Valve valve2;
@@ -32,5 +33,10 @@ public class Trumpet extends Instrument implements IPlay {
     @Override
     public String play() {
         return "trumpety trumpet sound";
+    }
+
+    @Override
+    public int calculateMarkup() {
+        return sellPrice - buyPrice;
     }
 }

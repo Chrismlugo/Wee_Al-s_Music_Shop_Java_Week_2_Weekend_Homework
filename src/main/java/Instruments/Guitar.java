@@ -2,12 +2,13 @@ package Instruments;
 
 import Abstract.Instrument;
 import Abstract.Item;
+import Behaviours.IPlay;
 import Behaviours.ISell;
 import Enum.InstrumentType;
 
 import java.util.ArrayList;
 
-public class Guitar extends Instrument implements ISell {
+public class Guitar extends Instrument implements IPlay, ISell {
     ArrayList<GuitarString> strings;
     public Guitar(String model, String material, InstrumentType instrumentType, String make, int buyPrice, int sellPrice) {
         super(model, material, instrumentType, make, buyPrice, sellPrice);
@@ -24,5 +25,10 @@ public class Guitar extends Instrument implements ISell {
     @Override
     public int calculateMarkup() {
         return sellPrice - buyPrice;
+    }
+
+    @Override
+    public String play() {
+        return "Strum";
     }
 }
