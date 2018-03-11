@@ -50,13 +50,18 @@ public class TestShop {
 
     @Test
     public void canCalculatePotentialProfit() {
+        Valve valve1 = new Valve();
+        Valve valve2 = new Valve();
+        Valve valve3 = new Valve();
+        Trumpet trumpet = new Trumpet("YTR2330", "Brass", InstrumentType.BRASS, "Yamaha", valve1, valve2, valve3, 80, 300);
         Guitar guitar = new Guitar("acoustic", "Beech", InstrumentType.STRING, "Ibanez", 450, 1200);
         PackOfGuitarStrings packOfGuitarStrings = new PackOfGuitarStrings("d'addario", 5, 16);
         ValveOil valveOil = new ValveOil("Yamaha", 1, 10);
+        shop.addStock(trumpet);
         shop.addStock(guitar);
         shop.addStock(packOfGuitarStrings);
         shop.addStock(valveOil);
-        assertEquals(770, shop.profit());
+        assertEquals(990, shop.profit());
     }
 
     @Test

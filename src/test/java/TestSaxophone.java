@@ -30,6 +30,12 @@ public class TestSaxophone {
 
     @Test
     public void canPlay() {
+
         assertEquals("blasts baker street", saxophone.play());
+    }
+
+    @Test
+    public void canGetMarkupPrice() {
+        assertEquals(381, saxophone.calculateMarkup());
     }
 }

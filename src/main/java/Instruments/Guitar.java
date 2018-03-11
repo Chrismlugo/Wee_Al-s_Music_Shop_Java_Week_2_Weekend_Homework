@@ -24,7 +24,7 @@ public class Guitar extends Instrument implements IPlay, ISell {
 
     @Override
     public int calculateMarkup() {
-        return sellPrice - buyPrice;
+        return getSellPrice() - getBuyPrice();
     }
 
     @Override

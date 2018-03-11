@@ -97,7 +97,7 @@ public class Shop {
         ArrayList<ISell> copy = new ArrayList<>();
         for(ISell item : stock){
             if(item instanceof Item ){
-                if(((Item) item).make == make){
+                if(((Item) item).getMake() == make){
                     copy.add(item);
                 }
             }

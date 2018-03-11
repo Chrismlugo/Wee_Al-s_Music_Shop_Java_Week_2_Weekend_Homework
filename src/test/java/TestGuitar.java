@@ -32,4 +32,9 @@ public class TestGuitar {
         ArrayList<GuitarString> copy = new ArrayList<>();
         assertEquals(copy, guitar.getStrings());
     }
+
+    @Test
+    public void canPlay() {
+        assertEquals("Strum", guitar.play());
+    }
 }
